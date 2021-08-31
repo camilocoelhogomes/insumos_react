@@ -57,6 +57,7 @@ function App() {
 		if (name === 'temperature') { step = 1 }
 		if (name === 'phosphor') { step = 1 }
 		if (name === 'potassium') { step = 10 }
+		if (userNavigation[1].subItens[0].inputs[name].value <= step) { return }
 		userNavigation[1].subItens[0].inputs[name].value = Number((userNavigation[1].subItens[0].inputs[name].value - step).toFixed(1));
 		setNavigation(userNavigation);
 		setFormula(npkCalculation({ navigation, formulaLabrary }));
