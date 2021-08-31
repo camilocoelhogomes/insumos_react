@@ -104,6 +104,7 @@ const npkCalculation = ({ navigation, formulaLabrary }) => {
     }
 
     const filterPhosphor = (formula) => {
+        console.log(npkRelation.phosphor[1]);
         if (npkRelation.phosphor[1] > 0) {
             return formula.P > 0;
         } return formula.P === 0;
