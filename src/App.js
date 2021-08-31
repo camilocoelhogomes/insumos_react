@@ -13,7 +13,7 @@ function App() {
 	const [navigation, setNavigation] = useState(library);
 	const [formula, setFormula] = useState({
 		formula: { N: 20, P: 5, K: 15 },
-		qtdArea: [1789, 1844],
+		qtdArea: [1790, 1844],
 		qtdPlants: [537, 553]
 	});
 
@@ -201,7 +201,7 @@ function App() {
 		if (name === 'temperature') { step = 1 }
 		if (name === 'phosphor') { step = 1 }
 		if (name === 'potassium') { step = 10 }
-		userNavigation[1].subItens[0].inputs[name].value -= step;
+		userNavigation[1].subItens[0].inputs[name].value = Number((userNavigation[1].subItens[0].inputs[name].value - step).toFixed(1));
 		setNavigation(userNavigation);
 		npkCalculation();
 	}
@@ -216,7 +216,7 @@ function App() {
 		if (name === 'phosphor') { step = 1 }
 		if (name === 'potassium') { step = 10 }
 
-		userNavigation[1].subItens[0].inputs[name].value += step;
+		userNavigation[1].subItens[0].inputs[name].value = Number((userNavigation[1].subItens[0].inputs[name].value + step).toFixed(1));
 		setNavigation(userNavigation);
 		npkCalculation();
 	}

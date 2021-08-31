@@ -5,7 +5,7 @@ const Output = ({ formula }) => {
         <div className='output-card'>
             <h2 className='output-title'>Correção Nescessária</h2>
             <ul>
-                <li className='output-line'><span className='output-label'>Formulado:</span><span> {formula.formula.N}-{formula.formula.P}-{formula.formula.K}</span></li>
+                <li className='output-line'><span className='output-label'>Formulado</span><span> {formula.formula.N}-{formula.formula.P}-{formula.formula.K}</span></li>
                 <li className='output-line'>
                     <span className='output-label'>
                         Quantidade por Hectare:

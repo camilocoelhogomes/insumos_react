@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Fab } from '@material-ui/core';
+import { Input, Fab, InputAdornment } from '@material-ui/core';
 import { Add, Remove } from '@material-ui/icons';
 
 import './CalculatorInput.css'
@@ -14,10 +14,12 @@ const CalculatorInput = ({ input, name, hasSoloAnalisys, changeInput, decInput, 
         <li className='input'>
             <div className='input-area'>
                 <p className='input-label'>{input.label}</p>
-                <TextField
+                <Input
                     fullWidth
-                    value={(input.value === 0) ? '' : input.value.toFixed(2)}
+                    value={(input.value === 0) ? '' : input.value}
                     onChange={(event) => changeInput(event.target.value, name)}
+                    type='number'
+                    endAdornment={<InputAdornment position="end">{input.unit}</InputAdornment>}
                 />
             </div>
             <div className='input-change-buttons'>
