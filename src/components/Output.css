@@ -2,7 +2,7 @@
     width: 100%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25), 0px -1px 4px #CDCDD0;
     border-radius: 10px;
-    padding: 12px 20px;
+    padding: 12px 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,11 +16,12 @@
 }
 
 .output-line {
-    margin: 8px;
+    margin: 20px 0;
     display: flex;
     justify-content: space-between;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid #CDCDD044;
 }
 
 .output-label {
@@ -43,4 +44,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
 }
