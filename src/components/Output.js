@@ -1,3 +1,4 @@
+import { Typography } from '@material-ui/core';
 import './Output.css'
 
 const Output = ({ formula }) => {
@@ -6,9 +7,9 @@ const Output = ({ formula }) => {
             <h2 className='output-title'>Correção Nescessária</h2>
             <ul>
                 <li className='output-line'>
-                    <span className='output-label'>
+                    <Typography variant='subtitle2' color='primary'>
                         Formulado
-                    </span>
+                    </Typography>
                     <span className='output-qtd-min'>
                         {formula.formula.N}-{formula.formula.P}-{formula.formula.K}
                     </span>

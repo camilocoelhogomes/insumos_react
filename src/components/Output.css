@@ -9,6 +9,7 @@
     align-items: center;
     margin-top: 32px;
 }
+
 .output-title {
     font-family: 'Roboto',sans-serif;
     font-weight: 500;
@@ -40,6 +41,7 @@
     font-size: 16px;
     font-family: 'Roboto',sans-serif;
 }
+
 .output-qtd-min{
     display: flex;
     align-items: center;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Switch } from '@material-ui/core';
+import { Switch, Typography } from '@material-ui/core';
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import npkCalculation from "./formula/npkCalculation";
-
+import theme from './theme';
 import './App.css';
 
 
@@ -17,18 +17,6 @@ function App() {
 		qtdArea: [1790, 1844],
 		qtdPlants: [537, 553]
 	});
-
-	const theme = createTheme({
-		palette: {
-			secondary: {
-				main: '#FE9001'
-			}
-		}
-	});
-
-
-
-
 
 	const hasSoloAnalisys = () => {
 		const userNavigation = [...navigation]
@@ -81,11 +69,12 @@ function App() {
 	return (
 		<div className='root'>
 			<MuiThemeProvider theme={theme}>
-				<h1 className='title'>Simulador</h1>
+				<Typography color='primary' variant='h2'>Simulador h2</Typography>
+				<Typography color='secondary' variant='h3'>Simulador h3</Typography>
 				<div className='solo-analisys'>
 					<p className='solo-analisys-label'>Possuo analise de solo</p>
 					<Switch
-						color="secondary"
+						color="primary"
 						checked={navigation[1].config.hasSoloAnalisys}
 						onChange={hasSoloAnalisys}
 					/>
