@@ -4,6 +4,11 @@ import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import npkCalculation from "./formula/npkCalculation";
 import theme from './theme';
 import './App.css';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import styled from 'styled-components';
 
 
 import Calculator from './components/Calculator'
@@ -67,37 +72,52 @@ function App() {
 	}
 
 	return (
+
 		<div className='root'>
 			<MuiThemeProvider theme={theme}>
-				<Typography color='primary' variant='h2'>Simulador h2</Typography>
-				<Typography color='secondary' variant='h3'>Simulador h3</Typography>
-				<div className='solo-analisys'>
-					<p className='solo-analisys-label'>Possuo analise de solo</p>
-					<Switch
-						color="primary"
-						checked={navigation[1].config.hasSoloAnalisys}
-						onChange={hasSoloAnalisys}
+				<AppBar position="fixed" color='inherit'>
+					<Toolbar variant="dense">
+						<IconButton edge="start" color="primary" aria-label="menu">
+							<MenuIcon />
+						</IconButton>
+						<Typography variant="h2" color="primary">
+							Simulador
+						</Typography>
+					</Toolbar>
+				</AppBar>
+				<Main>
+					<div className='solo-analisys'>
+						<p className='solo-analisys-label'>Possuo analise de solo</p>
+						<Switch
+							color="primary"
+							checked={navigation[1].config.hasSoloAnalisys}
+							onChange={hasSoloAnalisys}
+						/>
+					</div>
+					<ul className='calculator-navigation'>
+						<li className='calculator-navigation-item'>Macro Nutrientes</li>
+					</ul>
+					<Calculator
+						navigation={navigation}
+						changeInput={changeInput}
+						decInput={decInput}
+						accInput={accInput}
 					/>
-				</div>
-				<ul className='calculator-navigation'>
-					<li className='calculator-navigation-item'>Macro Nutrientes</li>
-				</ul>
-				<Calculator
-					navigation={navigation}
-					changeInput={changeInput}
-					decInput={decInput}
-					accInput={accInput}
-				/>
 
-				<Output
-					formula={formula}
-				/>
+					<Output
+						formula={formula}
+					/>
+				</Main>
 			</MuiThemeProvider>
 		</div>
 	);
 }
 
 export default App;
+
+const Main = styled.main`
+	padding: 48px 20px;
+`
 
 const library = [
 	{

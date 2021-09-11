@@ -26,7 +26,7 @@ const CalculatorInput = ({ input, name, hasSoloAnalisys, changeInput, decInput, 
                 />
             </div>
             <div className='input-change-buttons'>
-                <Fab onClick={() => decInput(name)} size='small' color='primary'>
+                <Fab onClick={() => decInput(name)} size='small' color='secondary'>
                     <Remove
                         style={{ color: '#FFFFFF' }}
                     />

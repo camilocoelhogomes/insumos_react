@@ -3,8 +3,9 @@ import { createTheme } from '@material-ui/core/styles';
 const theme = createTheme({
     typography: {
         h2: {
-            fontSize: '60px',
-            fontWeight: 400,
+            fontSize: '25.6px',
+            fontWeight: 600,
+            fontFamily: 'Inter',
         },
         h3: {
             fontSize: '48px',
@@ -13,10 +14,10 @@ const theme = createTheme({
     },
     palette: {
         primary: {
-            main: '#0E4DA4'
+            main: '#F75F43'
         },
         secondary: {
-            main: '#1BB55C'
+            main: '#F0754F'
         }
     }
 });
