@@ -1,7 +1,4 @@
 import CalculatorInput from './CalculatorInput';
-import './Calculator.css';
-
-
 
 const Calculator = ({ navigation, changeInput, decInput, accInput }) => {
     const calculatorInputs = navigation[1].subItens[0].inputs;

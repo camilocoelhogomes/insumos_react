@@ -1,8 +1,7 @@
 import React from 'react';
 import { Fab, InputAdornment, TextField } from '@material-ui/core';
 import { Add, Remove } from '@material-ui/icons';
-
-import './CalculatorInput.css'
+import styled from 'styled-components';
 
 const CalculatorInput = ({ input, name, hasSoloAnalisys, changeInput, decInput, accInput }) => {
 
@@ -11,7 +10,7 @@ const CalculatorInput = ({ input, name, hasSoloAnalisys, changeInput, decInput, 
         return <></>
     }
     return (
-        <li className='input'>
+        <StyledInput>
             <div className='input-area'>
                 <TextField
                     fullWidth
@@ -37,8 +36,24 @@ const CalculatorInput = ({ input, name, hasSoloAnalisys, changeInput, decInput, 
                     />
                 </Fab>
             </div>
-        </li>
+        </StyledInput>
     )
 }
 
 export default CalculatorInput;
+
+const StyledInput = styled.li`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .input-area{
+        width: 60%
+    }
+    .input-change-buttons{
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+    }
+`;

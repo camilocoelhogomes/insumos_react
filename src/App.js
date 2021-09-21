@@ -77,8 +77,8 @@ function App() {
 			<MuiThemeProvider theme={theme}>
 				<AppBar position="fixed" color='inherit'>
 					<Toolbar variant="dense">
-						<IconButton edge="start" color="primary" aria-label="menu">
-							<MenuIcon />
+						<IconButton edge="start" color="secondary" aria-label="menu">
+							<MenuIcon color="secondary" />
 						</IconButton>
 						<Typography variant="h2" color="primary">
 							Simulador
@@ -182,12 +182,12 @@ const library = [
 ];
 
 const formulaLabrary = [
-	{ N: 20, P: 5, K: 20 },
-	{ N: 20, P: 5, K: 15 },
-	{ N: 20, P: 5, K: 10 },
-	{ N: 25, P: 0, K: 25 },
-	{ N: 20, P: 0, K: 10 },
-	{ N: 30, P: 0, K: 0 },
-	{ N: 25, P: 5, K: 0 },
-	{ N: 20, P: 0, K: 15 }
+	{ N: 20, P: 5, K: 20, technology: 'convencional' },
+	{ N: 20, P: 5, K: 15, technology: 'convencional' },
+	{ N: 20, P: 5, K: 10, technology: 'convencional' },
+	{ N: 25, P: 0, K: 25, technology: 'convencional' },
+	{ N: 20, P: 0, K: 10, technology: 'convencional' },
+	{ N: 30, P: 0, K: 0, technology: 'convencional' },
+	{ N: 25, P: 5, K: 0, technology: 'convencional' },
+	{ N: 20, P: 0, K: 15, technology: 'convencional' }
 ]
