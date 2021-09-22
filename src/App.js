@@ -1,22 +1,16 @@
 import React, { useState } from "react";
-import { Switch, Typography } from '@material-ui/core';
-import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import npkCalculation from "./formula/npkCalculation";
-import theme from './theme';
-import './App.css';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import theme from './Assets/Style/theme';
 import styled from 'styled-components';
-
+import cultures from "./Assets/Library/Cultres";
 
 import Calculator from './components/Calculator'
 import Output from "./components/Output";
 
 
 function App() {
-	const [navigation, setNavigation] = useState(library);
+	const [navigation, setNavigation] = useState(cultures.coffee);
 	const [formula, setFormula] = useState({
 		formula: { N: 20, P: 5, K: 15 },
 		qtdArea: [1790, 1844],
@@ -72,44 +66,20 @@ function App() {
 	}
 
 	return (
+		<MuiThemeProvider theme={theme}>
+			<Main>
+				<Calculator
+					navigation={navigation}
+					changeInput={changeInput}
+					decInput={decInput}
+					accInput={accInput}
+				/>
 
-		<div className='root'>
-			<MuiThemeProvider theme={theme}>
-				<AppBar position="fixed" color='inherit'>
-					<Toolbar variant="dense">
-						<IconButton edge="start" color="secondary" aria-label="menu">
-							<MenuIcon color="secondary" />
-						</IconButton>
-						<Typography variant="h2" color="primary">
-							Simulador
-						</Typography>
-					</Toolbar>
-				</AppBar>
-				<Main>
-					<div className='solo-analisys'>
-						<p className='solo-analisys-label'>Possuo analise de solo</p>
-						<Switch
-							color="primary"
-							checked={navigation[1].config.hasSoloAnalisys}
-							onChange={hasSoloAnalisys}
-						/>
-					</div>
-					<ul className='calculator-navigation'>
-						<li className='calculator-navigation-item'>Macro Nutrientes</li>
-					</ul>
-					<Calculator
-						navigation={navigation}
-						changeInput={changeInput}
-						decInput={decInput}
-						accInput={accInput}
-					/>
-
-					<Output
-						formula={formula}
-					/>
-				</Main>
-			</MuiThemeProvider>
-		</div>
+				<Output
+					formula={formula}
+				/>
+			</Main>
+		</MuiThemeProvider>
 	);
 }
 
@@ -119,67 +89,7 @@ const Main = styled.main`
 	padding: 48px 20px;
 `
 
-const library = [
-	{
-		label: 'Tela Inicial',
-		icon: <ion-icon name="home-outline"></ion-icon>,
-		subItens: null,
-	},
-	{
-		label: 'Calculadoras',
-		icon: <ion-icon name="calculator-outline"></ion-icon>,
-		config: { hasSoloAnalisys: true },
-		subItens: [
-			{
-				label: 'Macro Nutrientes',
-				inputs: {
-					productivity: {
-						value: 35,
-						unit: 'sc/ha',
-						label: 'Produtividade Esperada'
-					},
-					distanceLines: {
-						value: 3,
-						unit: 'm',
-						label: 'Distância entre Linhas'
-					},
-					distancePlants: {
-						value: 1,
-						unit: 'm',
-						label: 'Distância entre Plantas'
-					},
-					temperature: {
-						value: 20,
-						unit: 'ºC',
-						label: 'Temperatura média anual'
-					},
-					phosphor: {
-						value: 8,
-						unit: 'P mg/dm³',
-						label: 'Fósforo'
-					},
-					potassium: {
-						value: 80,
-						unit: 'K mg/dm³',
-						label: 'Potássio'
-					},
-				},
-			},
-			{ label: 'Correção de Acidez' },
-			{ label: 'Micro Nutrientes' },
-		],
-	},
-	{
-		label: 'Cotações',
-		icon: <div className='money-icon'>$</div>,
-		subItens: null,
-	},
-	{
-		label: 'Loja',
-		icon: <ion-icon name="storefront-outline"></ion-icon>,
-		subItens: null,
-	}
-];
+
 
 const formulaLabrary = [
 	{ N: 20, P: 5, K: 20, technology: 'convencional' },
