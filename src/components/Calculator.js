@@ -2,7 +2,6 @@ import CalculatorInput from './CalculatorInput';
 
 const Calculator = ({ navigation, changeInput, decInput, accInput }) => {
     const calculatorInputs = navigation[1].subItens[0].inputs;
-
     return (
         <ul>
             {Object.keys(calculatorInputs).map((input) =>
